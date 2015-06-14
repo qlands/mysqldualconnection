@@ -16,7 +16,7 @@ FIND_PATH(MYSQL_INCLUDE_DIR mysql.h
 # if mysql is installed in a normal directory
 IF (MYSQL_INCLUDE_DIR)
         MESSAGE ("MYSQL Include dir defined")
-        SET(MYSQL_NAMES mysqld)
+        SET(MYSQL_NAMES libmysqld.a)
         FIND_LIBRARY(MYSQL_LIBRARY
         NAMES ${MYSQL_NAMES}
         PATHS /usr/lib /usr/local/lib /usr/lib64/mysql
@@ -35,7 +35,7 @@ IF (MYSQL_INCLUDE_DIR)
         ELSE (MYSQL_FOUND)
                 IF (MYSQL_FIND_REQUIRED)
                 MESSAGE(STATUS "Looked for MySQL libraries named ${MYSQL_NAMES}.")
-                MESSAGE(FATAL_ERROR "Could NOT find MySQL library")
+                MESSAGE(FATAL_ERROR "Could NOT find MySQL *static* library (libmysqld.a)")
                 ENDIF (MYSQL_FIND_REQUIRED)
         ENDIF (MYSQL_FOUND)
 # if mysql is not installed in a normal
