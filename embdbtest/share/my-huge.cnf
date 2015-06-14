@@ -19,14 +19,14 @@
 [client]
 #password	= your_password
 port		= 3306
-socket		= /var/run/mysql/mysql.sock
+socket		= /var/lib/mysql/mysql.sock
 
 # Here follows entries for some specific programs
 
 # The MySQL server
 [mysqld]
 port		= 3306
-socket		= /var/run/mysql/mysql.sock
+socket		= /var/lib/mysql/mysql.sock
 skip-external-locking
 key_buffer_size = 384M
 max_allowed_packet = 1M

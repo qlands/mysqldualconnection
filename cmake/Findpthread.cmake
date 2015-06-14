@@ -1,0 +1,18 @@
+# - Find aio library
+
+
+IF (PTHREAD_LIBRARY)
+  # Already in cache, be silent
+  SET(PTHREAD_FIND_QUIETLY TRUE)
+ENDIF (PTHREAD_LIBRARY)
+
+
+SET(PTHREAD_NAMES pthread)
+FIND_LIBRARY(PTHREAD_LIBRARY
+  NAMES ${PTHREAD_NAMES}
+  PATHS /usr/lib /usr/local/lib /usr/lib64
+)
+
+IF (PTHREAD_LIBRARY)  
+    MESSAGE(STATUS "PTHREAD founded:  ${PTHREAD_LIBRARY}")  
+ENDIF (PTHREAD_LIBRARY) 
